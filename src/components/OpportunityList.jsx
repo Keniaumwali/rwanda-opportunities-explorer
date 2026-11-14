@@ -1,0 +1,19 @@
+
+import OpportunityCard from "./OpportunityCard";
+
+function OpportunityList({ opportunities, savedIds, onToggleSave }) {
+  return (
+    <div className="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
+      {opportunities.map((opportunity) => (
+        <OpportunityCard
+          key={opportunity.id}
+          opportunity={opportunity}
+          isSaved={savedIds.includes(opportunity.id)}
+          onToggleSave={onToggleSave}
+        />
+      ))}
+    </div>
+  );
+}
+
+export default OpportunityList;
